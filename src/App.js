@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./app.css";
 
 function App() {
   const [repositories, setRepositories] = useState([]);
@@ -28,10 +29,10 @@ function App() {
     <>
       <ul>
         {repositories.map((repo) => (
-          <li key={repo.id}>
+          <li key={repo.id} className="lista">
             {repo.id} : {repo.name}
-            {repo.favorite && <span>(Favorito)</span>}
-            <button className="" onClick={() => handleFavorite(repo.id)}>
+            {repo.favorite && <span> - Favorito -</span>}
+            <button className="botão" onClick={() => handleFavorite(repo.id)}>
               Favoritar
             </button>
           </li>
